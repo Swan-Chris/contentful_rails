@@ -149,6 +149,7 @@ ContentfulRails.configure do |config|
   config.preview_access_token = "your preview access token"
   config.preview_username = "a basic auth username"
   config.preview_password = "a basic auth password"
+  config.preview_domain = 'www' # The subdomain for the preview functionality
 end
 ```
 
