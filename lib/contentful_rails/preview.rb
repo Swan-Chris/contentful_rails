@@ -19,7 +19,7 @@ module ContentfulRails
       end
 
       # check subdomain matches the configured one - We check every subdomain for a matching one
-      if request.subdomains.include? ContentfulRails.configuration.preview_domain
+      if request.subdomain == ContentfulRails.configuration.preview_domain
         if ContentfulRails.configuration.preview_username.nil? && ContentfulRails.configuration.preview_password.nil?
           ContentfulModel.use_preview_api = true
           return
