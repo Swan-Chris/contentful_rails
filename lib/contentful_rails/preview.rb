@@ -18,8 +18,8 @@ module ContentfulRails
         return
       end
 
-      # check subdomain matches the configured one - we assume it's first sub.domain.in.the.array
-      if request.subdomains.first == ContentfulRails.configuration.preview_domain
+      # check subdomain matches the configured one - We check every subdomain for a matching one
+      if request.subdomains.include? ContentfulRails.configuration.preview_domain
         if ContentfulRails.configuration.preview_username.nil? && ContentfulRails.configuration.preview_password.nil?
           ContentfulModel.use_preview_api = true
           return
